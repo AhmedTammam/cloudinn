@@ -24,12 +24,10 @@ export class AppComponent {
      (data) => {
         this.persons = this.persons.concat(data.results);
         console.log(data.results);
-        console.log(this.persons);
-        
+        console.log(this.persons);  
      }
    )
-   
-    
+   this.term = '';
   }
   
 }

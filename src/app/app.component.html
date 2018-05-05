@@ -14,38 +14,24 @@
           <label class="mdl-textfield__label" for="sample1">Text...</label>
         </div>
       </form>
-      <ul class="demo-list-item mdl-list">
-        <li class="mdl-list__item" *ngFor="let person of persons">
+      <ul class="demo-list-item mdl-list" id="sortable">
+        <li class="mdl-list__item ui-state-default" *ngFor="let person of persons">
           <div class="demo-card-wide mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title">
               <h2 class="mdl-card__title-text">{{person.name}}</h2>
             </div>
             <div class="mdl-card__supporting-text">
-              {{person.height}} {{person.url}} 
+              <p>Height: {{person.height}}</p>
+              <p>HomeWorld: {{person.homeworld}}</p>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                {{person.homeworld}}
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{person.url}}">
+                Visit
               </a>
-            </div>
-            <div class="mdl-card__menu">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">share</i>
-              </button>
             </div>
           </div>
         </li>
       </ul>
     </div>
   </main>
-</div>
-
-
-<div>
-
-  <ul>
-    <li *ngFor="let person of persons">
-      {{person.name}}
-    </li>
-  </ul>
 </div>
