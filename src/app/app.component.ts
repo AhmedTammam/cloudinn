@@ -21,13 +21,14 @@ export class AppComponent {
   fetchData(value){
    this.httpClient.get(`https://swapi.co/api/people/?search=${value.term}`)
    .subscribe(
-     (data)=>{
-         this.persons = data.results;
-       console.log(this.persons);
-       
-       
+     (data) => {
+        this.persons = this.persons.concat(data.results);
+        console.log(data.results);
+        console.log(this.persons);
+        
      }
    )
+   
     
   }
   
