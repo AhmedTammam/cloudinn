@@ -1,8 +1,48 @@
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Cloudinn Task</span>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <form #form="ngForm" (ngSubmit)="fetchData(form.value)">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="sample1" name="term" [(ngModel)]="term">
+          <label class="mdl-textfield__label" for="sample1">Text...</label>
+        </div>
+      </form>
+      <ul class="demo-list-item mdl-list">
+        <li class="mdl-list__item" *ngFor="let person of persons">
+          <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">{{person.name}}</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+              {{person.height}} {{person.url}} 
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                {{person.homeworld}}
+              </a>
+            </div>
+            <div class="mdl-card__menu">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">share</i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+
 <div>
-  <form #form="ngForm" (ngSubmit)="fetchData(form.value)">
-    <input type="text" name="term" [(ngModel)]="term">
-    <button type="submit">submit</button>
-  </form>
+
   <ul>
     <li *ngFor="let person of persons">
       {{person.name}}
