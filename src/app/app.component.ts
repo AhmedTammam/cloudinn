@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SearchService } from './services/search.service';
 
 @Component({
   selector: 'app-root',
@@ -11,19 +12,19 @@ import { HttpClient } from '@angular/common/http';
 
 export class AppComponent {
 
-  constructor(private httpClient:HttpClient){
+  constructor(private httpClient:HttpClient, private searchSer:SearchService){
 
   }
 
   term = '';
   persons = [];
 
-  fetchData(value){
-   this.httpClient.get(`https://swapi.co/api/people/?search=${value.term}`)
+  search(value){
+    this.searchSer.searchApi(value.term)
    .subscribe(
      (data) => {
-        this.persons = this.persons.concat(data.results);
-        console.log(data.results);
+        this.persons = data["results"];
+        console.log(data["results"]);
         console.log(this.persons);  
      }
    )

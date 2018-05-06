@@ -5,6 +5,6 @@ import { HttpClient } from '@angular/common/http';
 export class SearchService {
 
   constructor(private httpClient:HttpClient) { }
-  search(term){
+  searchApi(term){
     return this.httpClient.get(`https://swapi.co/api/people/?search=${term}`);
 }

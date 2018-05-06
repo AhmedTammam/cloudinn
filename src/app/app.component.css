@@ -1,3 +1,9 @@
+.mdl-layout__header-row{
+    margin: 20px;
+}
+.mdl-layout__header{
+    min-height: 100px;
+}
 .page-content{
     width: 60%;
     margin: 0 auto;
@@ -6,6 +12,9 @@
 .mdl-textfield {
     width: 100%;
     margin: 0 auto;  
+}
+.mdl-button{
+    right: 0;
 }
 
 .mdl-card{

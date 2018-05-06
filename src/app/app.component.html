@@ -8,10 +8,13 @@
   </header>
   <main class="mdl-layout__content">
     <div class="page-content">
-      <form #form="ngForm" (ngSubmit)="fetchData(form.value)">
+      <form #form="ngForm" (ngSubmit)="search(form.value)">
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="text" id="sample1" name="term" [(ngModel)]="term">
-          <label class="mdl-textfield__label" for="sample1">Text...</label>
+          <label class="mdl-textfield__label" for="sample1">Search for Star Legend</label>
+          <button class="mdl-button mdl-js-button mdl-button--icon" for="sample6" type="submit">
+              <i class="material-icons">search</i>
+          </button>
         </div>
       </form>
       <ul class="demo-list-item mdl-list" id="sortable">
