@@ -18,16 +18,20 @@ export class AppComponent {
 
   term = '';
   persons = [];
-
+// searching for characters with entry Keyword - getting data and assign it to Persons array
   search(value){
     this.searchSer.searchApi(value.term)
    .subscribe(
      (data) => {
-        this.persons = data["results"];
-        console.log(data["results"]);
-        console.log(this.persons);  
+       // check if fetching data or not
+       if(data["results"] && data["results"].length){
+        this.persons = data["results"]; 
+       }else{
+         this.persons = [];
+       }  
      }
    )
+   // reset term
    this.term = '';
   }
   

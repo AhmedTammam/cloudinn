@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchService } from './services/search.service';
+import { AppEditComponent } from './app-edit/app-edit.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppEditComponent
   ],
   imports: [
     BrowserModule,
